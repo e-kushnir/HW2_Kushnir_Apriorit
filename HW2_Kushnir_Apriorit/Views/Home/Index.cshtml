@@ -1,0 +1,20 @@
+﻿@model IEnumerable<System.String>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<form method="post">
+    <input type="hidden" name="i" value="0" />
+    <input type="submit" value="Send post" class="btn btn-primary" />
+</form>
+
+@MvcApplication.FilePath
+<br/>
+<label>New requests are on the top of the list on this page (but in file newest requests are at the end)</label>
+<p>
+    @foreach (var s in @Model)
+    {
+    <pre>@s</pre>
+    }
+</p>
